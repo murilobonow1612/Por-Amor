@@ -56,8 +56,7 @@ const App = () => {
                   </span>
                 </button>
 
-                {bebidasIsOpen ? (
-                  <div className='block'>
+                <div className={bebidasIsOpen ? "block" : "hidden"}>
                     {items.filter((item) => item.category === "Bebidas").map((item) => (
                       <li key={item.id} className='list-none mt-2 flex justify-start!'>
                         <div className='checkbox-wrapper mr-1'>
@@ -76,49 +75,20 @@ const App = () => {
                     ))
                     }
                   </div>
-                ) : (
-                  <div className='hidden'>
-                    {items.filter((item) => item.category === "Bebidas").map((item) => (
-                      <li key={item.id} className='list-none mt-2 flex justify-start!'>
-                        <div className='checkbox-wrapper mr-1'>
-                          <input type="checkbox" className="check" id={(item.id).toString()} />
-                          <label htmlFor={(item.id).toString()} className="label">
-                            <svg width="45" height="45" viewBox='0 0 95 95'>
-                              <rect x="30" y="20" width="50" height="50" stroke='black' fill='none'></rect>
-                              <g transform="translate(0,-952.36222)">
-                                <path d="m 56,963 c -102,122 6,9 7,9 17,-5 -66,69 -38,52 122,-77 -7,14 18,4 29,-11 45,-43 23,-4" stroke="black" stroke-width="3" fill="none" className="path1"></path>
-                              </g>
-                            </svg>
-                          </label>
-                        </div>
-                        {item.name}<span>{item.emoji}</span>
-                      </li>
-                    ))
-                    }
-                  </div>
-                )}
-
-
-
-
-
-
-
-
               </div>
 
             </div>
             <div className='basket-section shadow-2xl'>
             </div>
             <button onClick={() => setMenuIsOpen(!menuIsOpen)} className='btn-finalizar fixed bottom-10! right-20 bg-green-300 text-white p-4 rounded-xl shadow-xl/12 text-2xl cursor-pointer'>Finalizar</button>
-            {menuIsOpen ? <div onClick={() => setMenuIsOpen(!menuIsOpen)} className='fixed inset-0 bg-black/20 backdrop-blur-md'></div> : null}
+            <div onClick={() => setMenuIsOpen(!menuIsOpen)} className={`overlay fixed inset-0 transition-all duration-300  ${menuIsOpen ? "backdrop-blur-md bg-black/20" : "backdrop-blur-0 "}`}></div>
             <div className='text-center justify-center flex'>
 
 
-              {menuIsOpen ? <div className='payment h-160 w-200 fixed z-300 rounded-2xl 
-              left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'>
+              <div className={`payment h-160 w-200 fixed z-300 rounded-2xl 
+              left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-300 ${menuIsOpen ? "opacity-100" : "opacity-0"}`}>
                 <p>Finalizar</p>
-              </div> : null}
+              </div>
             </div>
 
 
