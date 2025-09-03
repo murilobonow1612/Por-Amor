@@ -30,23 +30,39 @@ body{
 .basket-section{
     background-color: #fff7ed;
     width: 440px;
-    height: 640px;
+    height: 700px;
     border-radius: 16px;
 }
 
-
-.lista_de_itens{
-    justify-content: start!important;
+.btn-finalizar{
+    transition: all 0.3s ease-in-out;
 }
 
 
+.btn-finalizar:hover{
+    transform: scale(1.1);
+}
 
+.payment{
+    background-color: #fff7ed;
+}
 
+.navlinks{
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
 
+.navlinks:hover{
+  transform: scale(1.1);
+}
 
+.section{
+  transition: all 0.3s ease-in-out;
+}
 
-
-
+.section:hover{
+  transform: scale(1.02);
+}
 
 
 /* From Uiverse.io by PriyanshuGupta28 */ 
