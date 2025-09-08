@@ -5,6 +5,11 @@
     src: url(./assets/Lexend-Bold.ttf);
 }
 
+@font-face {
+  font-family: rochester;
+  src: url(./assets/Rochester-Regular.ttf);
+}
+
 *{
     justify-content: center;
 }
@@ -109,4 +114,9 @@ body{
 .checkbox-wrapper .check:checked + label svg g path {
   stroke-dashoffset: 0;
   opacity: 1;
+}
+
+.items_summary{
+  font-family: 'rochester';
+  font-weight: bold;
 }
